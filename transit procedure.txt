@@ -1,0 +1,26 @@
+                                               CROSS ACCOUNT PEERING WITH TRANSIT GATEWAY 
+
+PROCEDURE:-
+
+STEP 1: Go account1 >> create one VPC (CIDR 13.0.0.0/16) >> Subnet(N.VIRGINIA) >> attach IGW >> RT>>Associate subnet>>and launch one PUBLIC instance >> SECURITY GROUP 22(SSH) 23(TELNET)
+
+
+STEP 2:  Go account2 >> create one VPC (CIDR 14.0.0.0/16) >> Subnet(N.CALIFORNIA) > RT >>Associate subnet >> and launch one PRIVATE instance >> SECURITY GROUP 22(SSH) 23(TELNET)
+
+STEP 3: Go to account 1 >> create Transit gateway >> create transit gateway attachment >>  transit gateway id >> attach vpc
+
+STEP 4: Go to account 2 >> create Transit gateway >> create transit gateway attachment >> transit gateway id >> attach vpc
+
+STEP 5: go to account 1 >> Route table >> edit routes >> (14.0.0.0Account 2 CIDR)--(trasit gateway) >> save  
+
+STEP 6:go to account 2 >> Route table >> edit routes >> (13.0.0.0Account 1 CIDR)--(transit gateway) >> save 
+
+STEP 7: Go toaccount 2 >>  create another transit gateway attachment for peering connection >> ACCOUNT 1 transit gateway id copy and paste it 
+
+STEP 8: Go to account 1 >> transit gateway accept the peering connection  
+
+STEP 9: Go to account 1 >> Transit gateway routetable >> create static route entry give the CIDR VALUE OF ACCOUNT 2 >> choose peering attachment and  Save it
+
+STEP 10: Go to account 2 >> Transit gateway routetable >> create static route entry give the CIDR VALUE OF ACCOUNT 1 >> choose peering attachment and Save it
+
+STEP 11 : TELNET private instance from public instance.
