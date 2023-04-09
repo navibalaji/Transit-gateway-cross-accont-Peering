@@ -24,3 +24,5 @@ STEP 9: Go to account 1 >> Transit gateway routetable >> create static route ent
 STEP 10: Go to account 2 >> Transit gateway routetable >> create static route entry give the CIDR VALUE OF ACCOUNT 1 >> choose peering attachment and Save it
 
 STEP 11 : TELNET private instance from public instance.
+
+Step 12: newline foem navi
