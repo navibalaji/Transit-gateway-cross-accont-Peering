@@ -25,4 +25,4 @@ STEP 10: Go to account 2 >> Transit gateway routetable >> create static route en
 
 STEP 11 : TELNET private instance from public instance.
 
-Step 12: newline foem navi acc
+Step 12: newline foem navi acc 1
